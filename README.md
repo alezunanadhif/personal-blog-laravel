@@ -8,9 +8,18 @@ You can add some information on your own web server
 ## Author
 
 **Alezuna Nadhif** 
-* *Initial work* - [alezunanadhif.github.io][https://github.com/alezunanadhif/personal-blog-laravel] (Repository space)
-* *My professional profile on* [LinkedIn][https://www.linkedin.com/in/alezunanadhif/]
+* *Initial work* - [alezunanadhif/personal-blog-laravel](https://github.com/alezunanadhif/personal-blog-laravel)
+* *My professional profile on* [LinkedIn](https://www.linkedin.com/in/alezunanadhif/)
 
+___
+## Technology
+
+- Laravel
+- xampp
+- composer
+
+
+___
 ## Installation
 
 Install the project.
