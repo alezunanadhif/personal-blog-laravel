@@ -17,13 +17,24 @@ class Post extends Model
         'content'
     ];
 
-    public static function boot() {
+    // public static function boot() {
+    //     parent::boot();
+
+    //     static::creating(function($post) {
+    //         $post->slug = preg_replace('/[^A-Za-z0-9-]+/', '-', $post->title);
+    //     });
+    // }
+
+    public static function boot()
+    {
         parent::boot();
 
-        static::creating(function($post) {
-            $post->slug = preg_replace('/[^A-Za-z0-9-]+/', '-', $post->title);
+        static::creating(function ($post) {
+            $slug = str_replace(' ', '-', strtolower(trim(preg_replace('/[^A-Za-z0-9-]+/', ' ', $post->title))));
+            $post->slug = preg_replace('/-+/', '-', $slug); // menghilangkan tanda hubung yang berulang
         });
     }
+
 
     public function comments() {
         return $this->hasMany(comments::class);

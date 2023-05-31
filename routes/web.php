@@ -18,15 +18,15 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('index');
+})->middleware(['auth', 'verified']);
 
 // Auth
-Route::get('login', [AuthController::class, 'login']);
-Route::post('login', [AuthController::class, 'authenticate']);
-Route::get('logout', [AuthController::class, 'logout']);
-Route::get('register', [AuthController::class, 'register_form']);
-Route::post('register', [AuthController::class, 'register']);
+// Route::get('login', [AuthController::class, 'login']);
+// Route::post('login', [AuthController::class, 'authenticate']);
+// Route::get('logout', [AuthController::class, 'logout']);
+// Route::get('register', [AuthController::class, 'register_form'])->name('register');
+// Route::post('register', [AuthController::class, 'register']);
 
 // Content
 Route::get('posts', [PostController::class, 'index']);

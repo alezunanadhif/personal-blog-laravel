@@ -17,12 +17,19 @@ class PostController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
+    public function __construct()
+    {
+        $this->middleware('auth');
+        $this->middleware('is_admin');
+        $this->middleware('verified');
+    }
+
     public function index()
     {
 
-        if (!Auth::check()) {
-            return redirect('login');
-        }
+        // if (!Auth::check()) {
+        //     return redirect('login');
+        // }
 
         $posts = Post::status(true)->get();
         $total_active = $posts->count();
@@ -49,9 +56,9 @@ class PostController extends Controller
     public function create()
     {
 
-        if (!Auth::check()) {
-            return redirect('login');
-        }
+        // if (!Auth::check()) {
+        //     return redirect('login');
+        // }
 
         return view('posts.create');
     }
@@ -65,9 +72,9 @@ class PostController extends Controller
     public function store(Request $request)
     {
 
-        if (!Auth::check()) {
-            return redirect('login');
-        }
+        // if (!Auth::check()) {
+        //     return redirect('login');
+        // }
 
         $title = $request->input('title');
         $content = $request->input('content');
@@ -91,9 +98,9 @@ class PostController extends Controller
     public function show($slug)
     {
 
-        if (!Auth::check()) {
-            return redirect('login');
-        }
+        // if (!Auth::check()) {
+        //     return redirect('login');
+        // }
 
         $selected_post = POST::where('slug', $slug)->first();
         $comments = $selected_post->comments()->get();
@@ -119,9 +126,9 @@ class PostController extends Controller
     public function edit($slug)
     {
 
-        if (!Auth::check()) {
-            return redirect('login');
-        }
+        // if (!Auth::check()) {
+        //     return redirect('login');
+        // }
 
         $selected_post = Post::where('slug', $slug)->first();
 
@@ -142,9 +149,9 @@ class PostController extends Controller
     public function update(Request $request, $slug)
     {
 
-        if (!Auth::check()) {
-            return redirect('login');
-        }
+        // if (!Auth::check()) {
+        //     return redirect('login');
+        // }
 
         $input = $request->all();
 
@@ -169,9 +176,9 @@ class PostController extends Controller
     public function destroy($slug)
     {
 
-        if (!Auth::check()) {
-            return redirect('login');
-        }
+        // if (!Auth::check()) {
+        //     return redirect('login');
+        // }
 
         Post::where('slug', $slug)->delete();
 
@@ -181,9 +188,9 @@ class PostController extends Controller
     public function trash()
     {
 
-        if (!Auth::check()) {
-            return redirect('login');
-        }
+        // if (!Auth::check()) {
+        //     return redirect('login');
+        // }
         
         $trash_item = Post::onlyTrashed()->get();
 
