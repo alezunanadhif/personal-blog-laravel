@@ -1,4 +1,4 @@
-# Portfolio Web
+# Personal Blog Laravel
 
 > just a simple personal blog web
 
@@ -15,8 +15,8 @@ ___
 ## Technology
 
 - Laravel
-- xampp
 - composer
+- xampp
 
 
 ___
