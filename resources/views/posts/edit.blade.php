@@ -16,8 +16,8 @@
             <label for="content" class="form-label">Konten</label>
             <textarea class="form-control" id="content" rows="3" value="{{ $posts->content }}" name="content" required>{{ $posts->content }}</textarea>
         </div>
-        <button type="submit" class="btn btn-outline-secondary"><i class="fa-solid fa-floppy-disk"></i></button>
-        <button type="button" class="btn btn-outline-danger" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash"></i></button>
+        <button type="submit" class="btn btn-success"><i class="fa-solid fa-floppy-disk"></i></button>
+        <button type="button" class="btn btn-success" data-bs-toggle="modal" data-bs-target="#exampleModal"><i class="fa-solid fa-trash"></i></button>
 
     </form>
 

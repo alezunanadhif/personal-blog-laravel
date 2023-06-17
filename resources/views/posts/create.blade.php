@@ -12,7 +12,7 @@
             <label for="content" class="form-label">Konten</label>
             <textarea class="form-control" id="content" rows="3" name="content" required></textarea>
         </div>
-        <button type="submit" class="btn btn-outline-secondary">Simpan</button>
+        <button type="submit" class="btn btn-success">Simpan</button>
     </form>
 </div>
 @endsection

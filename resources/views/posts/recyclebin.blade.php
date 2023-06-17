@@ -2,7 +2,7 @@
 @section('title', "Recycle Bin")
 @section('content')
 <div class="container my-4">
-    <a href="{{ url('posts') }}" class="btn btn-outline-success">Kembali</a>
+    <a href="{{ url('posts') }}" class="btn btn-success">Kembali</a>
 
     @foreach($posts as $p)
 

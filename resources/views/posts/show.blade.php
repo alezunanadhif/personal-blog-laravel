@@ -18,6 +18,6 @@
     </div>
     @endforeach
 
-    <a href="{{ url('posts') }}" class="btn btn-outline-success">Kembali</a>
+    <a href="{{ url('posts') }}" class="btn btn-success">Kembali</a>
 </div>
 @endsection
